@@ -17,9 +17,19 @@ namespace View
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnCadastrar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNome_Click(object sender, EventArgs e)
+        {
+            txtNome.Text = "";
         }
     }
 }

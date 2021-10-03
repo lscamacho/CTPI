@@ -130,5 +130,26 @@ namespace View
             slidePanel.Top = btnListing.Top;
             listingControl1.BringToFront();
         }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            slidePanel.Height = btnUpdate.Height;
+            slidePanel.Top = btnUpdate.Top;
+            clienteControlUpdate1.BringToFront();
+        }
+
+        private void btnAdm_Click_4(object sender, EventArgs e)
+        {
+            slidePanel.Height = btnAdm.Height;
+            slidePanel.Top = btnAdm.Top;
+            funcionarioControl1.BringToFront();
+        }
+
+        private void btnAdm_Click(object sender, EventArgs e)
+        {
+            slidePanel.Height = btnAdm.Height;
+            slidePanel.Top = btnAdm.Top;
+            funcionarioControl1.BringToFront();
+        }
     }
 }

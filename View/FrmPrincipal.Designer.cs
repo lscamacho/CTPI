@@ -39,6 +39,8 @@ namespace View
             this.itbHora = new System.Windows.Forms.ToolStripStatusLabel();
             this.barraStatus = new System.Windows.Forms.StatusStrip();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAdm = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnListing = new System.Windows.Forms.Button();
             this.slidePanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -49,11 +51,13 @@ namespace View
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnOff = new System.Windows.Forms.Button();
+            this.funcionarioControl1 = new View.FuncionarioControl();
+            this.clienteControlUpdate1 = new View.ClienteControlUpdate();
+            this.listingControl1 = new View.ListingControl();
             this.productControl1 = new View.ProductControl();
             this.saleControl1 = new View.SaleControl();
             this.clientControl1 = new View.ClientControl();
             this.homeControl1 = new View.HomeControl();
-            this.listingControl1 = new View.ListingControl();
             this.barraStatus.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -119,6 +123,8 @@ namespace View
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panel1.Controls.Add(this.btnAdm);
+            this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.btnListing);
             this.panel1.Controls.Add(this.slidePanel);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -131,6 +137,42 @@ namespace View
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(204, 592);
             this.panel1.TabIndex = 1;
+            // 
+            // btnAdm
+            // 
+            this.btnAdm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdm.FlatAppearance.BorderSize = 0;
+            this.btnAdm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdm.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdm.ForeColor = System.Drawing.Color.White;
+            this.btnAdm.Image = ((System.Drawing.Image)(resources.GetObject("btnAdm.Image")));
+            this.btnAdm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdm.Location = new System.Drawing.Point(10, 502);
+            this.btnAdm.Name = "btnAdm";
+            this.btnAdm.Size = new System.Drawing.Size(188, 64);
+            this.btnAdm.TabIndex = 8;
+            this.btnAdm.Text = "      Adm";
+            this.btnAdm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdm.UseVisualStyleBackColor = true;
+            this.btnAdm.Click += new System.EventHandler(this.btnAdm_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(10, 432);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(188, 64);
+            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.Text = "      Update";
+            this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.button1_Click_3);
             // 
             // btnListing
             // 
@@ -278,6 +320,27 @@ namespace View
             this.btnOff.UseVisualStyleBackColor = true;
             this.btnOff.Click += new System.EventHandler(this.button1_Click_2);
             // 
+            // funcionarioControl1
+            // 
+            this.funcionarioControl1.Location = new System.Drawing.Point(204, 27);
+            this.funcionarioControl1.Name = "funcionarioControl1";
+            this.funcionarioControl1.Size = new System.Drawing.Size(886, 565);
+            this.funcionarioControl1.TabIndex = 9;
+            // 
+            // clienteControlUpdate1
+            // 
+            this.clienteControlUpdate1.Location = new System.Drawing.Point(204, 32);
+            this.clienteControlUpdate1.Name = "clienteControlUpdate1";
+            this.clienteControlUpdate1.Size = new System.Drawing.Size(886, 565);
+            this.clienteControlUpdate1.TabIndex = 8;
+            // 
+            // listingControl1
+            // 
+            this.listingControl1.Location = new System.Drawing.Point(204, 29);
+            this.listingControl1.Name = "listingControl1";
+            this.listingControl1.Size = new System.Drawing.Size(886, 565);
+            this.listingControl1.TabIndex = 7;
+            // 
             // productControl1
             // 
             this.productControl1.Location = new System.Drawing.Point(204, 29);
@@ -306,18 +369,13 @@ namespace View
             this.homeControl1.Size = new System.Drawing.Size(1048, 693);
             this.homeControl1.TabIndex = 3;
             // 
-            // listingControl1
-            // 
-            this.listingControl1.Location = new System.Drawing.Point(204, 29);
-            this.listingControl1.Name = "listingControl1";
-            this.listingControl1.Size = new System.Drawing.Size(886, 565);
-            this.listingControl1.TabIndex = 7;
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1085, 592);
+            this.Controls.Add(this.funcionarioControl1);
+            this.Controls.Add(this.clienteControlUpdate1);
             this.Controls.Add(this.listingControl1);
             this.Controls.Add(this.productControl1);
             this.Controls.Add(this.saleControl1);
@@ -365,6 +423,10 @@ namespace View
         private SaleControl saleControl1;
         private ProductControl productControl1;
         private ListingControl listingControl1;
+        private System.Windows.Forms.Button btnUpdate;
+        private ClienteControlUpdate clienteControlUpdate1;
+        private System.Windows.Forms.Button btnAdm;
+        private FuncionarioControl funcionarioControl1;
     }
 }
 

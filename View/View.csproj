@@ -51,6 +51,12 @@
     <Compile Include="ClientControl.Designer.cs">
       <DependentUpon>ClientControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClienteControlUpdate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClienteControlUpdate.Designer.cs">
+      <DependentUpon>ClienteControlUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,12 @@
     </Compile>
     <Compile Include="FrmCadPessoa.Designer.cs">
       <DependentUpon>FrmCadPessoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuncionarioControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FuncionarioControl.Designer.cs">
+      <DependentUpon>FuncionarioControl.cs</DependentUpon>
     </Compile>
     <Compile Include="HomeControl.cs">
       <SubType>UserControl</SubType>
@@ -98,6 +110,9 @@
     <EmbeddedResource Include="ClientControl.resx">
       <DependentUpon>ClientControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ClienteControlUpdate.resx">
+      <DependentUpon>ClienteControlUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCadPessoa.resx">
       <DependentUpon>FrmCadPessoa.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FuncionarioControl.resx">
+      <DependentUpon>FuncionarioControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeControl.resx">
       <DependentUpon>HomeControl.cs</DependentUpon>
