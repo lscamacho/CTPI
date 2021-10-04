@@ -9,7 +9,7 @@ namespace Model
    public class User
     {
 
-        public Int64 CPF { get; set; }
+        //public Int64 CPF { get; set; }
 
         public String Usuario { get; set; }
 
