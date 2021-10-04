@@ -29,7 +29,9 @@ namespace View
 
         private void txtNome_Click(object sender, EventArgs e)
         {
-            txtNome.Text = "";
+            txtClienteNome.Text = "";
         }
+
+      
     }
 }

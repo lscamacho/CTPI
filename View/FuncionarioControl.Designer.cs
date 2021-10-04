@@ -443,6 +443,7 @@ namespace View
             this.textBox5.TabIndex = 90;
             this.textBox5.Tag = "";
             this.textBox5.Text = "Matrícula do funcionário";
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label16
             // 

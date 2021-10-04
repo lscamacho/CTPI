@@ -33,7 +33,7 @@ namespace View
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtClienteNome = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtCpf = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,7 +63,7 @@ namespace View
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtClienteIdFunc = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,18 +97,18 @@ namespace View
             this.label2.TabIndex = 1;
             this.label2.Text = "Nome";
             // 
-            // txtNome
+            // txtClienteNome
             // 
-            this.txtNome.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtNome.Location = new System.Drawing.Point(21, 92);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(547, 28);
-            this.txtNome.TabIndex = 2;
-            this.txtNome.Tag = "";
-            this.txtNome.Text = "Nome completo do Cliente";
-            this.txtNome.Click += new System.EventHandler(this.txtNome_Click);
-            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
+            this.txtClienteNome.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClienteNome.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtClienteNome.Location = new System.Drawing.Point(21, 92);
+            this.txtClienteNome.Name = "txtClienteNome";
+            this.txtClienteNome.Size = new System.Drawing.Size(547, 28);
+            this.txtClienteNome.TabIndex = 2;
+            this.txtClienteNome.Tag = "";
+            this.txtClienteNome.Text = "Nome completo do Cliente";
+            this.txtClienteNome.Click += new System.EventHandler(this.txtNome_Click);
+            this.txtClienteNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // contextMenuStrip1
             // 
@@ -451,22 +451,22 @@ namespace View
             this.label15.TabIndex = 33;
             this.label15.Text = "ID Funcionário";
             // 
-            // textBox5
+            // txtClienteIdFunc
             // 
-            this.textBox5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox5.Location = new System.Drawing.Point(597, 92);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(273, 28);
-            this.textBox5.TabIndex = 34;
-            this.textBox5.Tag = "";
-            this.textBox5.Text = "Matrícula do funcionário";
+            this.txtClienteIdFunc.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClienteIdFunc.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtClienteIdFunc.Location = new System.Drawing.Point(597, 92);
+            this.txtClienteIdFunc.Name = "txtClienteIdFunc";
+            this.txtClienteIdFunc.Size = new System.Drawing.Size(273, 28);
+            this.txtClienteIdFunc.TabIndex = 34;
+            this.txtClienteIdFunc.Tag = "";
+            this.txtClienteIdFunc.Text = "Matrícula do funcionário";
             // 
             // ClientControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtClienteIdFunc);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnCadastrar);
@@ -495,7 +495,7 @@ namespace View
             this.Controls.Add(this.txtDtNascimento);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtCpf);
-            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.txtClienteNome);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Name = "ClientControl";
@@ -512,7 +512,7 @@ namespace View
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtClienteNome;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.MaskedTextBox txtCpf;
         private System.Windows.Forms.Label label3;
@@ -542,6 +542,6 @@ namespace View
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtClienteIdFunc;
     }
 }
