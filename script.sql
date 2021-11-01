@@ -1,134 +1,48 @@
--- MySQL Workbench Forward Engineering
-
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
-
--- -----------------------------------------------------
--- Schema webapp
--- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema webapp
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `webapp` DEFAULT CHARACTER SET utf8 ;
-USE `webapp` ;
-
--- -----------------------------------------------------
--- Table `webapp`.`FUNCIONARIO`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `webapp`.`FUNCIONARIO` (
-  `MATRICULA` INT NOT NULL,
-  `NOME` VARCHAR(45) NOT NULL,
-  `CARGO` VARCHAR(45) NULL,
-  `ENDERECO` VARCHAR(45) NULL,
-  `TELEFONE` VARCHAR(45) NULL,
-  PRIMARY KEY (`MATRICULA`))
-ENGINE = InnoDB;
+-- Script Date: 01/11/2021 14:34  - ErikEJ.SqlCeScripting version 3.5.2.90
+CREATE TABLE [funcionario] (
+  [matricula] bigint IDENTITY (1,1) NOT NULL
+, [nome] nvarchar(100) NOT NULL
+, [cargo] nvarchar(100) NOT NULL
+, [endereco] nvarchar(100) NOT NULL
+, [telefone] nvarchar(100) NULL
+);
+GO
+ALTER TABLE [funcionario] ADD CONSTRAINT [PK_funcionario] PRIMARY KEY ([matricula]);
+GO
 
 
--- -----------------------------------------------------
--- Table `webapp`.`CLIENTE`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `webapp`.`CLIENTE` (
-  `CPF` INT NOT NULL,
-  `NOME` VARCHAR(45) NOT NULL,
-  `LONGRADOURO` VARCHAR(45) NULL,
-  `DATA_NASCIMENTO` DATE NULL,
-  `SEXO` VARCHAR(45) NULL,
-  `ESTADO_CIVIL` VARCHAR(45) NULL,
-  `TELEFONE` VARCHAR(45) NULL,
-  `RENDA_MENSAL` DECIMAL(18,2) NULL,
-  `ESTADO` VARCHAR(2) NULL,
-  `CIDADE` VARCHAR(45) NULL,
-  `CEP` VARCHAR(45) NULL,
-  PRIMARY KEY (`CPF`))
-ENGINE = InnoDB;
+-- Script Date: 01/11/2021 15:04  - ErikEJ.SqlCeScripting version 3.5.2.90
+CREATE TABLE [cliente] (
+  [cpf] nvarchar(100) NOT NULL
+, [nome] nvarchar(100) NOT NULL
+, [logadouro] nvarchar(200) NOT NULL
+, [data_nascimento] datetime NOT NULL
+, [estado_civil] nvarchar(20) NOT NULL
+, [telefone] nvarchar(15) NOT NULL
+, [renda_mensal] float NOT NULL
+, [estado] nvarchar(2) NOT NULL
+, [cidade] nvarchar(100) NOT NULL
+, [cep] nvarchar(20) NOT NULL
+);
+GO
+ALTER TABLE [cliente] ADD CONSTRAINT [PK_cliente] PRIMARY KEY ([cpf]);
 
 
--- -----------------------------------------------------
--- Table `webapp`.`PRODUTO`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `webapp`.`PRODUTO` (
-  `ID_PRODUTO` INT NOT NULL,
-  `DESCRICAO` VARCHAR(45) NULL,
-  `TIPO` VARCHAR(45) NULL,
-  `PRECO` DECIMAL(18,2) NULL,
-  PRIMARY KEY (`ID_PRODUTO`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `webapp`.`VENDA`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `webapp`.`VENDA` (
-  `ID_VENDA` INT NOT NULL,
-  `DATA` DATE NULL,
-  `VALOR` DECIMAL(18,2) NULL,
-  `FUNCIONARIO_MATRICULA` INT NOT NULL,
-  `CLIENTE_CPF` INT NOT NULL,
-  `PRODUTO_ID_PRODUTO` INT NOT NULL,
-  PRIMARY KEY (`ID_VENDA`),
-  INDEX `fk_VENDA_FUNCIONARIO_idx` (`FUNCIONARIO_MATRICULA` ASC) VISIBLE,
-  INDEX `fk_VENDA_CLIENTE1_idx` (`CLIENTE_CPF` ASC) VISIBLE,
-  INDEX `fk_VENDA_PRODUTO1_idx` (`PRODUTO_ID_PRODUTO` ASC) VISIBLE,
-  CONSTRAINT `fk_VENDA_FUNCIONARIO`
-    FOREIGN KEY (`FUNCIONARIO_MATRICULA`)
-    REFERENCES `webapp`.`FUNCIONARIO` (`MATRICULA`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_VENDA_CLIENTE1`
-    FOREIGN KEY (`CLIENTE_CPF`)
-    REFERENCES `webapp`.`CLIENTE` (`CPF`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_VENDA_PRODUTO1`
-    FOREIGN KEY (`PRODUTO_ID_PRODUTO`)
-    REFERENCES `webapp`.`PRODUTO` (`ID_PRODUTO`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `webapp`.`PAGAMENTO`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `webapp`.`PAGAMENTO` (
-  `ID_PAGAMENTO` INT NOT NULL,
-  `TIPO_PAGAMENTO` VARCHAR(45) NULL,
-  `VENDA_ID_VENDA` INT NOT NULL,
-  PRIMARY KEY (`ID_PAGAMENTO`),
-  INDEX `fk_PAGAMENTO_VENDA1_idx` (`VENDA_ID_VENDA` ASC) VISIBLE,
-  CONSTRAINT `fk_PAGAMENTO_VENDA1`
-    FOREIGN KEY (`VENDA_ID_VENDA`)
-    REFERENCES `webapp`.`VENDA` (`ID_VENDA`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `webapp`.`VENDA_has_PRODUTO`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `webapp`.`VENDA_has_PRODUTO` (
-  `VENDA_ID_VENDA` INT NOT NULL,
-  `PRODUTO_ID_PRODUTO` INT NOT NULL,
-  PRIMARY KEY (`VENDA_ID_VENDA`, `PRODUTO_ID_PRODUTO`),
-  INDEX `fk_VENDA_has_PRODUTO_PRODUTO1_idx` (`PRODUTO_ID_PRODUTO` ASC) VISIBLE,
-  INDEX `fk_VENDA_has_PRODUTO_VENDA1_idx` (`VENDA_ID_VENDA` ASC) VISIBLE,
-  CONSTRAINT `fk_VENDA_has_PRODUTO_VENDA1`
-    FOREIGN KEY (`VENDA_ID_VENDA`)
-    REFERENCES `webapp`.`VENDA` (`ID_VENDA`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_VENDA_has_PRODUTO_PRODUTO1`
-    FOREIGN KEY (`PRODUTO_ID_PRODUTO`)
-    REFERENCES `webapp`.`PRODUTO` (`ID_PRODUTO`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+-- Script Date: 01/11/2021 15:08  - ErikEJ.SqlCeScripting version 3.5.2.90
+CREATE TABLE [venda] (
+  [id_venda] bigint IDENTITY (1,1) NOT NULL
+, [data] datetime NOT NULL
+, [valor] float NOT NULL
+, [matricula_funcionario] bigint NOT NULL
+, [cpf_cliente] nvarchar(100) NOT NULL
+, [id_produto] bigint NOT NULL
+);
+GO
+ALTER TABLE [venda] ADD CONSTRAINT [PK_venda] PRIMARY KEY ([id_venda]);
+GO
+-- Script Date: 01/11/2021 15:12  - ErikEJ.SqlCeScripting version 3.5.2.90
+ALTER TABLE [venda] ADD CONSTRAINT [fk_matricula_funcionario] FOREIGN KEY ([matricula_funcionario]) REFERENCES [funcionario]([matricula]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+-- Script Date: 01/11/2021 15:13  - ErikEJ.SqlCeScripting version 3.5.2.90
+ALTER TABLE [venda] ADD CONSTRAINT [fk_cpf_cliente] FOREIGN KEY ([cpf_cliente]) REFERENCES [cliente]([cpf]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
