@@ -8,11 +8,11 @@ namespace Model
 {
    public class Cliente
     {
-        private Int32 Cpf { get; set; }
+        public Int64 Cpf { get; set; }
 
         public String Nome { get; set; }
 
-        public String Longradouro { get; set; }
+        public String Logradouro { get; set; }
 
         public DateTime DataNascimento { get; set; }
 
@@ -24,6 +24,11 @@ namespace Model
 
         public String Cep { get; set; }
 
+        public float RendaMensal { get; set; }
+
+        public String Estado { get; set; }
+
+        public String Cidade { get; set; }
 
     }
 }

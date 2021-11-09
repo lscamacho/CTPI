@@ -8,7 +8,7 @@ namespace Model
 {
     public class Funcionario
     {
-        private Int32 Matricula { get; set; }
+        public Int64 Matricula { get; set; }
 
         public String Nome { get; set; }
 
