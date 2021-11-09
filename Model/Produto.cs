@@ -8,11 +8,10 @@ namespace Model
 {
     public class Produto
     {
-        public Int32 IdProduto { get; set; }
-
+        public Int64 IdProduto { get; set; }
         public String Descricao { get; set; }
         public String Tipo { get; set; }
-        public float Valor { get; set; }
+        public float Preco { get; set; }
 
     }
 }
