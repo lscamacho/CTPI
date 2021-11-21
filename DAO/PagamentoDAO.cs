@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAO
 {
-    public class ProdutoDAO
+    public class PagamentoDAO
     {
         #region Métodos para manipulação de arquivos
 
@@ -16,32 +16,31 @@ namespace DAO
 
         #region Métodos de acesso a dados
 
-        public Dictionary<Int64, Produto> BuscarTodos()
+        public Dictionary<Int64, Pagamento> BuscarTodos()
         {
-            Dictionary<Int64, Produto> mapaProduto = new Dictionary<Int64, Produto>();
+            Dictionary<Int64, Pagamento> mapaPagamento = new Dictionary<Int64, Pagamento>();
 
             try
             {
                 String SQL = "SELECT  " +
-                    "[id_produto]," +
-                    "[descricao]," +
-                    "[tipo]," +
-                    "[preco]," +
-                    "FROM [produto] ORDER BY id_produto;";
+                    "[id_pagamento]," +
+                    "[tipo_pagamento]," +
+                    "[id_venda]," +                    
+                    "FROM [pagamento] ORDER BY id_pagamento;";
 
                 DataTableReader data = BD.ExecutarSelect(SQL);
 
                 while (data.Read())
                 {
-                    Produto p = new Produto();
+                    Pagamento p = new Pagamento();
 
-                    p.IdProduto = data.GetInt64(0);
-                    p.Descricao = data.GetString(1);
-                    p.Tipo = data.GetString(2);
-                    p.Preco = data.GetFloat(3);
-                  
+                    p.IdPagamento = data.GetInt64(0);
+                    p.TipoPagamento = data.GetString(1);
+                    p.IdVenda = data.GetInt64(2);
+                 
 
-                    mapaProduto.Add(p.IdProduto, p);
+
+                    mapaPagamento.Add(p.IdPagamento, p);
                 }
             }
             catch (Exception ex)
@@ -49,40 +48,41 @@ namespace DAO
                 throw new Exception("BUSCAR TODOS / " + ex.Message);
             }
 
-            return mapaProduto;
+            return mapaPagamento;
         }
 
-        public Dictionary<Int64, Produto> BuscarListaFiltrada(String _filtro)
+        public Dictionary<Int64, Pagamento> BuscarListaFiltrada(String _filtro)
         {
-            Dictionary<Int64, Produto> mapaProduto = new Dictionary<Int64, Produto>();
+            Dictionary<Int64, Pagamento> mapaPagamento = new Dictionary<Int64, Pagamento>();
             try
             {
-                String SQL = "SELECT * FROM produto WHERE ";
+                String SQL = "SELECT * FROM pagamento WHERE ";
 
                 Int64 saida;
                 if (Int64.TryParse(_filtro, out saida))
                 {
-                    SQL += String.Format("id_produto = {0}", _filtro);
+                    SQL += String.Format("id_pagamento = {0}", _filtro);
                 }
                 else
                 {
-                    SQL += String.Format("nome LIKE '%{0}%'", _filtro);
+                    SQL += String.Format("tipo_pagamento LIKE '%{0}%'", _filtro);
                 }
 
-                SQL += " ORDER BY id_produto;";
+                SQL += " ORDER BY id_pagamento;";
 
                 DataTableReader data = BD.ExecutarSelect(SQL);
 
                 while (data.Read())
                 {
-                    Produto p = new Produto();
+                    Pagamento p = new Pagamento();
 
-                    p.IdProduto = data.GetInt64(0);
-                    p.Descricao = data.GetString(1);
-                    p.Tipo = data.GetString(2);
-                    p.Preco = data.GetFloat(3);
+                    p.IdPagamento = data.GetInt64(0);
+                    p.TipoPagamento = data.GetString(1);
+                    p.IdVenda = data.GetInt64(2);
 
-                    mapaProduto.Add(p.IdProduto, p);
+
+
+                    mapaPagamento.Add(p.IdPagamento, p);
                 }
             }
             catch (Exception ex)
@@ -90,26 +90,27 @@ namespace DAO
                 throw new Exception("BUSCAR PELOS FILTROS / " + ex.Message);
             }
 
-            return mapaProduto;
+            return mapaPagamento;
         }
 
-        public Produto BuscarPorIdProduto(Int64 _idProduto)
+        public Pagamento BuscarPorIdPagamento(Int64 _idPagamento)
         {
-            Produto p = null;
+            Pagamento p = null;
             try
             {
-                String SQL = String.Format("SELECT * FROM produto WHERE id_produto = {0};", _idProduto);
+                String SQL = String.Format("SELECT * FROM pagamento WHERE id_pagamento = {0};", _idPagamento);
 
                 DataTableReader data = BD.ExecutarSelect(SQL);
 
                 if (data.Read())
                 {
-                    p = new Produto();
+                    p = new Pagamento();
 
-                    p.IdProduto = data.GetInt64(0);
-                    p.Descricao = data.GetString(1);
-                    p.Tipo = data.GetString(2);
-                    p.Preco = data.GetFloat(3);
+
+                    p.IdPagamento = data.GetInt64(0);
+                    p.TipoPagamento = data.GetString(1);
+                    p.IdVenda = data.GetInt64(2);
+
 
                 }
             }
@@ -121,7 +122,7 @@ namespace DAO
             return p;
         }
 
-        public Boolean Inserir(Produto _obj)
+        public Boolean Inserir(Pagamento _obj)
         {
             int linhasAfetasdas = 0;
 
@@ -129,17 +130,15 @@ namespace DAO
             {
 
 
-                String SQL = String.Format("INSERT INTO produto (" +
-                    "[id_produto]," +
-                    "[descricao]," +
-                    "[tipo]," +
-                    "[preco]," +
+                String SQL = String.Format("INSERT INTO Pagamento (" +
+                    "id_pagamento," +
+                    "tipo_pagamento," +
+                    "id_venda," +                    
                     ") " +
-                    "VALUES ({0}, '{1}', '{2}', '{3}');",
-                    _obj.IdProduto,
-                    _obj.Descricao,
-                    _obj.Tipo,
-                    _obj.Preco                    
+                    "VALUES ({0}, '{1}', '{2}');",
+                    _obj.IdPagamento,
+                    _obj.TipoPagamento,
+                    _obj.IdVenda
                     );
 
                 linhasAfetasdas = BD.ExecutarIDU(SQL);
@@ -160,13 +159,13 @@ namespace DAO
 
         }
 
-        public Boolean Deletar(Int64 _idProduto)
+        public Boolean Deletar(Int64 _idPagamento)
         {
             int linhasAfetasdas = 0;
 
             try
             {
-                String SQL = "DELETE FROM produto WHERE id_produto = " + _idProduto;
+                String SQL = "DELETE FROM pagamento WHERE id_pagamento = " + _idPagamento;
 
                 linhasAfetasdas = BD.ExecutarIDU(SQL);
             }
@@ -185,21 +184,20 @@ namespace DAO
             }
         }
 
-        public Boolean Alterar(Produto _obj)
+        public Boolean Alterar(Pagamento _obj)
         {
             int linhasAfetasdas = 0;
 
             try
             {
-                String SQL = String.Format("UPDATE cliente SET " +
-                    "descricao = '{0}'," +
-                    "tipo = '{1}'," +
-                    "preco = '{2}'," +
-                    " WHERE id_produto = {10}",
-                    _obj.Descricao,
-                    _obj.Tipo,
-                    _obj.Preco,
-                    _obj.IdProduto
+                String SQL = String.Format("UPDATE pagamento SET " +                    
+                    "tipo_pagamento," +
+                    "id_venda," +
+                    ") " +
+                    "VALUES ({0}, '{1}', '{2}');",                    
+                    _obj.TipoPagamento,
+                    _obj.IdVenda,
+                    _obj.IdPagamento
                     );
 
 
@@ -223,6 +221,5 @@ namespace DAO
         }
 
         #endregion
-
     }
 }

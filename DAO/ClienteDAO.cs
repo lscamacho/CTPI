@@ -44,10 +44,10 @@ namespace DAO
                     p.Cpf = data.GetInt64(0);
                     p.Nome = data.GetString(1);
                     p.Logradouro = data.GetString(2);
-                    p.DataNascimento = data.GetDateTime(3);
+                    p.DataNascimento = data.GetString(3);
                     p.Telefone = data.GetString(4);
                     p.EstadoCivil = data.GetString(5);
-                    p.RendaMensal = data.GetFloat(6);
+                    p.RendaMensal = data.GetString(6);
                     p.Estado = data.GetString(7);
                     p.Cidade = data.GetString(8);
                     p.Cep = data.GetString(9);
@@ -91,10 +91,10 @@ namespace DAO
                     p.Cpf = data.GetInt64(0);
                     p.Nome = data.GetString(1);
                     p.Logradouro = data.GetString(2);
-                    p.DataNascimento = data.GetDateTime(3);
+                    p.DataNascimento = data.GetString(3);
                     p.Telefone = data.GetString(4);
                     p.EstadoCivil = data.GetString(5);
-                    p.RendaMensal = data.GetFloat(6);
+                    p.RendaMensal = data.GetString(6);
                     p.Estado = data.GetString(7);
                     p.Cidade = data.GetString(8);
                     p.Cep = data.GetString(9);
@@ -127,10 +127,10 @@ namespace DAO
                     p.Cpf = data.GetInt64(0);
                     p.Nome = data.GetString(1);
                     p.Logradouro = data.GetString(2);
-                    p.DataNascimento = data.GetDateTime(3);
+                    p.DataNascimento = data.GetString(3);
                     p.Telefone = data.GetString(4);
                     p.EstadoCivil = data.GetString(5);
-                    p.RendaMensal = data.GetFloat(6);
+                    p.RendaMensal = data.GetString(6);
                     p.Estado = data.GetString(7);
                     p.Cidade = data.GetString(8);
                     p.Cep = data.GetString(9);
@@ -159,18 +159,20 @@ namespace DAO
                     "[logradouro]," +
                     "[data_nascimento]," +
                     "[estado_civil]," +
+                    "[sexo]," +
                     "[telefone]," +
                     "[renda_mensal]," +
                     "[estado]," +
                     "[cidade]," +
-                    "[cep]," +
+                    "[cep]" +
                     ") " +
-                    "VALUES ({0}, '{1}', '{2}', '{3}', '{4}','{5}','{6}','{7}','{8}','{9}');",
+                    "VALUES ({0}, '{1}', '{2}', '{3}', '{4}','{5}','{6}','{7}','{8}','{9}', '{10}');",
                     _obj.Cpf,
                     _obj.Nome,
                     _obj.Logradouro,
                     _obj.DataNascimento,
                     _obj.EstadoCivil,
+                    _obj.Sexo,
                     _obj.Telefone,
                     _obj.RendaMensal,
                     _obj.Estado,

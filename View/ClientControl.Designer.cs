@@ -33,37 +33,32 @@ namespace View
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtClienteNome = new System.Windows.Forms.TextBox();
+            this.txbClienteNome = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.txtCpf = new System.Windows.Forms.MaskedTextBox();
+            this.mtbCpf = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtDtNascimento = new System.Windows.Forms.MaskedTextBox();
+            this.mtbDtNascimento = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.rbnMasculino = new System.Windows.Forms.RadioButton();
-            this.rbnFeminino = new System.Windows.Forms.RadioButton();
             this.cbxEstadoCivil = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.txbTelefone = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtRenda = new System.Windows.Forms.MaskedTextBox();
+            this.txbRenda = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txbLogradouro = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.cbxEstado = new System.Windows.Forms.ComboBox();
+            this.txbCidade = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mtbCep = new System.Windows.Forms.MaskedTextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtClienteIdFunc = new System.Windows.Forms.TextBox();
+            this.txbSexo = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,18 +92,16 @@ namespace View
             this.label2.TabIndex = 1;
             this.label2.Text = "Nome";
             // 
-            // txtClienteNome
+            // txbClienteNome
             // 
-            this.txtClienteNome.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClienteNome.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtClienteNome.Location = new System.Drawing.Point(21, 92);
-            this.txtClienteNome.Name = "txtClienteNome";
-            this.txtClienteNome.Size = new System.Drawing.Size(547, 28);
-            this.txtClienteNome.TabIndex = 2;
-            this.txtClienteNome.Tag = "";
-            this.txtClienteNome.Text = "Nome completo do Cliente";
-            this.txtClienteNome.Click += new System.EventHandler(this.txtNome_Click);
-            this.txtClienteNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
+            this.txbClienteNome.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbClienteNome.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txbClienteNome.Location = new System.Drawing.Point(21, 92);
+            this.txbClienteNome.Name = "txbClienteNome";
+            this.txbClienteNome.Size = new System.Drawing.Size(835, 28);
+            this.txbClienteNome.TabIndex = 2;
+            this.txbClienteNome.Tag = "";
+            this.txbClienteNome.Text = "Nome completo do Cliente";
             // 
             // contextMenuStrip1
             // 
@@ -116,15 +109,16 @@ namespace View
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // txtCpf
+            // mtbCpf
             // 
-            this.txtCpf.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCpf.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCpf.Location = new System.Drawing.Point(21, 178);
-            this.txtCpf.Mask = "000,000,000,-00";
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(249, 28);
-            this.txtCpf.TabIndex = 5;
+            this.mtbCpf.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbCpf.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.mtbCpf.Location = new System.Drawing.Point(21, 178);
+            this.mtbCpf.Mask = "000,000,000,-00";
+            this.mtbCpf.Name = "mtbCpf";
+            this.mtbCpf.Size = new System.Drawing.Size(249, 28);
+            this.mtbCpf.TabIndex = 5;
+            this.mtbCpf.Text = "3848388838";
             // 
             // label3
             // 
@@ -136,16 +130,17 @@ namespace View
             this.label3.TabIndex = 6;
             this.label3.Text = "CPF";
             // 
-            // txtDtNascimento
+            // mtbDtNascimento
             // 
-            this.txtDtNascimento.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDtNascimento.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtDtNascimento.Location = new System.Drawing.Point(316, 178);
-            this.txtDtNascimento.Mask = "00/00/0000";
-            this.txtDtNascimento.Name = "txtDtNascimento";
-            this.txtDtNascimento.Size = new System.Drawing.Size(249, 28);
-            this.txtDtNascimento.TabIndex = 7;
-            this.txtDtNascimento.ValidatingType = typeof(System.DateTime);
+            this.mtbDtNascimento.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbDtNascimento.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.mtbDtNascimento.Location = new System.Drawing.Point(316, 178);
+            this.mtbDtNascimento.Mask = "0000/00/00";
+            this.mtbDtNascimento.Name = "mtbDtNascimento";
+            this.mtbDtNascimento.Size = new System.Drawing.Size(249, 28);
+            this.mtbDtNascimento.TabIndex = 7;
+            this.mtbDtNascimento.Text = "19981212";
+            this.mtbDtNascimento.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbDtNascimento_MaskInputRejected);
             // 
             // label4
             // 
@@ -161,35 +156,11 @@ namespace View
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(606, 156);
+            this.label5.Location = new System.Drawing.Point(593, 156);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 19);
             this.label5.TabIndex = 9;
             this.label5.Text = "Sexo";
-            // 
-            // rbnMasculino
-            // 
-            this.rbnMasculino.AutoSize = true;
-            this.rbnMasculino.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbnMasculino.Location = new System.Drawing.Point(610, 183);
-            this.rbnMasculino.Name = "rbnMasculino";
-            this.rbnMasculino.Size = new System.Drawing.Size(115, 25);
-            this.rbnMasculino.TabIndex = 10;
-            this.rbnMasculino.TabStop = true;
-            this.rbnMasculino.Text = "Masculino";
-            this.rbnMasculino.UseVisualStyleBackColor = true;
-            // 
-            // rbnFeminino
-            // 
-            this.rbnFeminino.AutoSize = true;
-            this.rbnFeminino.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbnFeminino.Location = new System.Drawing.Point(731, 183);
-            this.rbnFeminino.Name = "rbnFeminino";
-            this.rbnFeminino.Size = new System.Drawing.Size(102, 25);
-            this.rbnFeminino.TabIndex = 11;
-            this.rbnFeminino.TabStop = true;
-            this.rbnFeminino.Text = "Feminino";
-            this.rbnFeminino.UseVisualStyleBackColor = true;
             // 
             // cbxEstadoCivil
             // 
@@ -216,15 +187,16 @@ namespace View
             this.label6.TabIndex = 13;
             this.label6.Text = "Estado civil";
             // 
-            // txtTelefone
+            // txbTelefone
             // 
-            this.txtTelefone.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefone.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtTelefone.Location = new System.Drawing.Point(319, 277);
-            this.txtTelefone.Mask = "(99) 00000-0000";
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(246, 28);
-            this.txtTelefone.TabIndex = 14;
+            this.txbTelefone.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTelefone.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txbTelefone.Location = new System.Drawing.Point(319, 277);
+            this.txbTelefone.Mask = "(99) 00000-0000";
+            this.txbTelefone.Name = "txbTelefone";
+            this.txbTelefone.Size = new System.Drawing.Size(246, 28);
+            this.txbTelefone.TabIndex = 14;
+            this.txbTelefone.Text = "21434343434";
             // 
             // label7
             // 
@@ -236,15 +208,15 @@ namespace View
             this.label7.TabIndex = 15;
             this.label7.Text = "Telefone";
             // 
-            // txtRenda
+            // txbRenda
             // 
-            this.txtRenda.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRenda.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtRenda.Location = new System.Drawing.Point(610, 278);
-            this.txtRenda.Mask = "$";
-            this.txtRenda.Name = "txtRenda";
-            this.txtRenda.Size = new System.Drawing.Size(260, 28);
-            this.txtRenda.TabIndex = 16;
+            this.txbRenda.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbRenda.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txbRenda.Location = new System.Drawing.Point(610, 277);
+            this.txbRenda.Mask = "$ 999,99";
+            this.txbRenda.Name = "txbRenda";
+            this.txbRenda.Size = new System.Drawing.Size(260, 28);
+            this.txbRenda.TabIndex = 16;
             // 
             // label8
             // 
@@ -262,31 +234,21 @@ namespace View
             this.label9.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(17, 344);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(107, 19);
+            this.label9.Size = new System.Drawing.Size(102, 19);
             this.label9.TabIndex = 18;
-            this.label9.Text = "Longadouro";
+            this.label9.Text = "Logradouro";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // textBox1
+            // txbLogradouro
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox1.Location = new System.Drawing.Point(21, 366);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(450, 28);
-            this.textBox1.TabIndex = 19;
-            this.textBox1.Tag = "";
-            this.textBox1.Text = "Longadouro";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox2.Location = new System.Drawing.Point(497, 366);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(92, 28);
-            this.textBox2.TabIndex = 20;
-            this.textBox2.Tag = "";
-            this.textBox2.Text = "N°";
+            this.txbLogradouro.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbLogradouro.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txbLogradouro.Location = new System.Drawing.Point(21, 366);
+            this.txbLogradouro.Name = "txbLogradouro";
+            this.txbLogradouro.Size = new System.Drawing.Size(544, 28);
+            this.txbLogradouro.TabIndex = 19;
+            this.txbLogradouro.Tag = "";
+            this.txbLogradouro.Text = "Logradouro";
             // 
             // textBox3
             // 
@@ -298,16 +260,6 @@ namespace View
             this.textBox3.TabIndex = 21;
             this.textBox3.Tag = "";
             this.textBox3.Text = "Complemento";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(493, 344);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 19);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "Número";
             // 
             // label11
             // 
@@ -329,12 +281,12 @@ namespace View
             this.label12.TabIndex = 24;
             this.label12.Text = "Estado";
             // 
-            // comboBox1
+            // cbxEstado
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbxEstado.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxEstado.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.cbxEstado.FormattingEnabled = true;
+            this.cbxEstado.Items.AddRange(new object[] {
             "AC",
             "AL",
             "AP",
@@ -362,22 +314,22 @@ namespace View
             "SP",
             "SE",
             "TO"});
-            this.comboBox1.Location = new System.Drawing.Point(21, 461);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(138, 29);
-            this.comboBox1.TabIndex = 25;
-            this.comboBox1.Text = "AC";
+            this.cbxEstado.Location = new System.Drawing.Point(21, 461);
+            this.cbxEstado.Name = "cbxEstado";
+            this.cbxEstado.Size = new System.Drawing.Size(138, 29);
+            this.cbxEstado.TabIndex = 25;
+            this.cbxEstado.Text = "AC";
             // 
-            // textBox4
+            // txbCidade
             // 
-            this.textBox4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox4.Location = new System.Drawing.Point(206, 462);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(359, 28);
-            this.textBox4.TabIndex = 26;
-            this.textBox4.Tag = "";
-            this.textBox4.Text = "Cidade";
+            this.txbCidade.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbCidade.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txbCidade.Location = new System.Drawing.Point(206, 462);
+            this.txbCidade.Name = "txbCidade";
+            this.txbCidade.Size = new System.Drawing.Size(359, 28);
+            this.txbCidade.TabIndex = 26;
+            this.txbCidade.Tag = "";
+            this.txbCidade.Text = "Cidade";
             // 
             // label13
             // 
@@ -389,15 +341,15 @@ namespace View
             this.label13.TabIndex = 27;
             this.label13.Text = "Cidade";
             // 
-            // maskedTextBox1
+            // mtbCep
             // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.maskedTextBox1.Location = new System.Drawing.Point(597, 462);
-            this.maskedTextBox1.Mask = "00000-000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(273, 28);
-            this.maskedTextBox1.TabIndex = 28;
+            this.mtbCep.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbCep.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.mtbCep.Location = new System.Drawing.Point(597, 462);
+            this.mtbCep.Mask = "00000-000";
+            this.mtbCep.Name = "mtbCep";
+            this.mtbCep.Size = new System.Drawing.Size(273, 28);
+            this.mtbCep.TabIndex = 28;
             // 
             // label14
             // 
@@ -441,61 +393,46 @@ namespace View
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
-            // label15
+            // txbSexo
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(593, 70);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(126, 19);
-            this.label15.TabIndex = 33;
-            this.label15.Text = "ID Funcionário";
-            // 
-            // txtClienteIdFunc
-            // 
-            this.txtClienteIdFunc.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClienteIdFunc.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtClienteIdFunc.Location = new System.Drawing.Point(597, 92);
-            this.txtClienteIdFunc.Name = "txtClienteIdFunc";
-            this.txtClienteIdFunc.Size = new System.Drawing.Size(273, 28);
-            this.txtClienteIdFunc.TabIndex = 34;
-            this.txtClienteIdFunc.Tag = "";
-            this.txtClienteIdFunc.Text = "Matrícula do funcionário";
+            this.txbSexo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSexo.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txbSexo.Location = new System.Drawing.Point(597, 178);
+            this.txbSexo.Name = "txbSexo";
+            this.txbSexo.Size = new System.Drawing.Size(256, 28);
+            this.txbSexo.TabIndex = 35;
+            this.txbSexo.Tag = "";
+            this.txbSexo.Text = "masculino";
             // 
             // ClientControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtClienteIdFunc);
-            this.Controls.Add(this.label15);
+            this.Controls.Add(this.txbSexo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.mtbCep);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txbCidade);
+            this.Controls.Add(this.cbxEstado);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txbLogradouro);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtRenda);
+            this.Controls.Add(this.txbRenda);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtTelefone);
+            this.Controls.Add(this.txbTelefone);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbxEstadoCivil);
-            this.Controls.Add(this.rbnFeminino);
-            this.Controls.Add(this.rbnMasculino);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtDtNascimento);
+            this.Controls.Add(this.mtbDtNascimento);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtCpf);
-            this.Controls.Add(this.txtClienteNome);
+            this.Controls.Add(this.mtbCpf);
+            this.Controls.Add(this.txbClienteNome);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Name = "ClientControl";
@@ -512,36 +449,31 @@ namespace View
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtClienteNome;
+        private System.Windows.Forms.TextBox txbClienteNome;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.MaskedTextBox txtCpf;
+        private System.Windows.Forms.MaskedTextBox mtbCpf;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox txtDtNascimento;
+        private System.Windows.Forms.MaskedTextBox mtbDtNascimento;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RadioButton rbnMasculino;
-        private System.Windows.Forms.RadioButton rbnFeminino;
         private System.Windows.Forms.ComboBox cbxEstadoCivil;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.MaskedTextBox txtTelefone;
+        private System.Windows.Forms.MaskedTextBox txbTelefone;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox txtRenda;
+        private System.Windows.Forms.MaskedTextBox txbRenda;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txbLogradouro;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ComboBox cbxEstado;
+        private System.Windows.Forms.TextBox txbCidade;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mtbCep;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtClienteIdFunc;
+        private System.Windows.Forms.TextBox txbSexo;
     }
 }

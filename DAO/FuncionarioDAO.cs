@@ -103,7 +103,7 @@ namespace DAO
             Funcionario p = null;
             try
             {
-                String SQL = String.Format("SELECT * FROM pessoas WHERE cpf = {0};", _matricula);
+                String SQL = String.Format("SELECT * FROM funcionario WHERE matricula = {0};", _matricula);
 
                 DataTableReader data = BD.ExecutarSelect(SQL);
 

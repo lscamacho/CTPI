@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAO
 {
-    class VendaDAO
+    public class VendaDAO
     {
         #region Métodos para manipulação de arquivos
 
@@ -99,7 +99,7 @@ namespace DAO
             return mapaVenda;
         }
 
-        public Venda BuscarPorIdProduto(Int64 _idVenda)
+        public Venda BuscarPorIdVenda(Int64 _idVenda)
         {
             Venda p = null;
             try

@@ -14,7 +14,7 @@ namespace Model
 
         public String Logradouro { get; set; }
 
-        public DateTime DataNascimento { get; set; }
+        public String DataNascimento { get; set; }
 
         public String Sexo { get; set; }
 
@@ -24,7 +24,7 @@ namespace Model
 
         public String Cep { get; set; }
 
-        public float RendaMensal { get; set; }
+        public String RendaMensal { get; set; }
 
         public String Estado { get; set; }
 

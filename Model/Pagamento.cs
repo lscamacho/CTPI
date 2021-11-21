@@ -8,9 +8,11 @@ namespace Model
 {
     public class Pagamento
     {
-        public Int32 IdPagamento { get; set; }
+        public Int64 IdPagamento { get; set; }
 
         public String TipoPagamento { get; set; }
+
+        public Int64 IdVenda { get; set; }
 
 
     }
