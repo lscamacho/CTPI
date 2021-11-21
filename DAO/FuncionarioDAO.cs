@@ -147,15 +147,16 @@ namespace DAO
                     "[cargo]," +
                     "[estado]," +
                     "[cidade]," +
-                    "[cep]," +
+                    "[cep]" +
                     ") " +
-                    "VALUES ({0}, '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}');",
+                    "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}');",
                     _obj.Nome,
                     _obj.Matricula,
                     _obj.Cpf,
                     _obj.DataNascimento,
                     _obj.Sexo,
                     _obj.EstadoCivil,
+                    _obj.Endereco,
                     _obj.Telefone,
                     _obj.Cargo,
                     _obj.Estado,

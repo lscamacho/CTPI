@@ -192,7 +192,7 @@ namespace View
             this.txbFuncionarioEnd.Size = new System.Drawing.Size(849, 28);
             this.txbFuncionarioEnd.TabIndex = 76;
             this.txbFuncionarioEnd.Tag = "";
-            this.txbFuncionarioEnd.Text = "Logradouro";
+            this.txbFuncionarioEnd.Text = "Gerente\tRua Marins Silva 143";
             // 
             // label9
             // 
@@ -319,7 +319,7 @@ namespace View
             this.txbFuncionarioNome.Size = new System.Drawing.Size(544, 28);
             this.txbFuncionarioNome.TabIndex = 61;
             this.txbFuncionarioNome.Tag = "";
-            this.txbFuncionarioNome.Text = "Nome completo do Funcionario";
+            this.txbFuncionarioNome.Text = "Marcos Oliveira";
             // 
             // label15
             // 
@@ -372,7 +372,7 @@ namespace View
             this.txbMatricula.Size = new System.Drawing.Size(273, 28);
             this.txbMatricula.TabIndex = 90;
             this.txbMatricula.Tag = "";
-            this.txbMatricula.Text = "123";
+            this.txbMatricula.Text = "122";
             // 
             // label16
             // 
