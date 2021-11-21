@@ -10,9 +10,9 @@ namespace Model
     {
         public Int64 IdVenda { get; set; }
 
-        public DateTime Data { get; set; }
+        public String Data { get; set; }
 
-        public float Valor { get; set; }
+        public String Valor { get; set; }
 
         public Int64 MatriculaFuncionario { get; set; }
 

@@ -8,7 +8,7 @@ using DAO;
 
 namespace Control
 {
-    class FuncionarioCtrl
+    public class FuncionarioCtrl
     {
         public Object BD(string _comando, Object _parametro)
         {

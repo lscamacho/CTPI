@@ -38,8 +38,8 @@ namespace DAO
                     Venda p = new Venda();
 
                     p.IdVenda = data.GetInt64(0);
-                    p.Data = data.GetDateTime(1);
-                    p.Valor = data.GetFloat(2);
+                    p.Data = data.GetString(1);
+                    p.Valor = data.GetString(2);
                     p.MatriculaFuncionario = data.GetInt64(3);
                     p.CpfCliente = data.GetInt64(4);
                     p.IdProduto = data.GetInt64(5);
@@ -82,8 +82,8 @@ namespace DAO
                     Venda p = new Venda();
 
                     p.IdVenda = data.GetInt64(0);
-                    p.Data = data.GetDateTime(1);
-                    p.Valor = data.GetFloat(2);
+                    p.Data = data.GetString(1);
+                    p.Valor = data.GetString(2);
                     p.MatriculaFuncionario = data.GetInt64(3);
                     p.CpfCliente = data.GetInt64(4);
                     p.IdProduto = data.GetInt64(5);
@@ -113,8 +113,8 @@ namespace DAO
                     p = new Venda();
 
                     p.IdVenda = data.GetInt64(0);
-                    p.Data = data.GetDateTime(1);
-                    p.Valor = data.GetFloat(2);
+                    p.Data = data.GetString(1);
+                    p.Valor = data.GetString(2);
                     p.MatriculaFuncionario = data.GetInt64(3);
                     p.CpfCliente = data.GetInt64(4);
                     p.IdProduto = data.GetInt64(5);
@@ -141,11 +141,11 @@ namespace DAO
                     "[id_venda]," +
                     "[data]," +
                     "[valor]," +
-                    "[matricula_funcionario]," +
-                    "[cpf_cliente]," +
-                    "[id_produto]," +
+                    "[funcionario_matricula]," +
+                    "[cliente_cpf]," +
+                    "[id_produto]" +
                     ") " +
-                    "VALUES ({0}, '{1}', '{2}', '{3}', '{4}', '{5}');",
+                    "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}');",
                     _obj.IdVenda,
                     _obj.Data,
                     _obj.Valor,

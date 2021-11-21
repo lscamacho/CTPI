@@ -29,39 +29,41 @@ namespace View
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txbProdNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnCadastrarVenda = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textCpfCliente = new System.Windows.Forms.TextBox();
-            this.txtDtNascimento = new System.Windows.Forms.MaskedTextBox();
+            this.txbCpfCliente = new System.Windows.Forms.TextBox();
+            this.cbxDatVenda = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtRenda = new System.Windows.Forms.MaskedTextBox();
+            this.cbxValorVenda = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBoxFunc = new System.Windows.Forms.TextBox();
+            this.txbFuncionarioMatricula = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txbIdVenda = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtNome
+            // txbProdNome
             // 
-            this.txtNome.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtNome.Location = new System.Drawing.Point(216, 96);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(498, 36);
-            this.txtNome.TabIndex = 3;
-            this.txtNome.Tag = "";
-            this.txtNome.Text = "Código do Produto";
+            this.txbProdNome.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbProdNome.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txbProdNome.Location = new System.Drawing.Point(210, 160);
+            this.txbProdNome.Name = "txbProdNome";
+            this.txbProdNome.Size = new System.Drawing.Size(498, 36);
+            this.txbProdNome.TabIndex = 3;
+            this.txbProdNome.Tag = "";
+            this.txbProdNome.Text = "121";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(36, 104);
+            this.label2.Location = new System.Drawing.Point(30, 168);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 28);
             this.label2.TabIndex = 4;
@@ -117,64 +119,66 @@ namespace View
             this.btnCadastrarVenda.TabIndex = 33;
             this.btnCadastrarVenda.Text = "Registrar";
             this.btnCadastrarVenda.UseVisualStyleBackColor = false;
+            this.btnCadastrarVenda.Click += new System.EventHandler(this.btnCadastrarVenda_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(36, 263);
+            this.label3.Location = new System.Drawing.Point(30, 327);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 28);
             this.label3.TabIndex = 36;
             this.label3.Text = "Cliente";
             // 
-            // textCpfCliente
+            // txbCpfCliente
             // 
-            this.textCpfCliente.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textCpfCliente.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textCpfCliente.Location = new System.Drawing.Point(216, 255);
-            this.textCpfCliente.Name = "textCpfCliente";
-            this.textCpfCliente.Size = new System.Drawing.Size(498, 36);
-            this.textCpfCliente.TabIndex = 35;
-            this.textCpfCliente.Tag = "";
-            this.textCpfCliente.Text = "CPF Cliente";
+            this.txbCpfCliente.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbCpfCliente.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txbCpfCliente.Location = new System.Drawing.Point(210, 319);
+            this.txbCpfCliente.Name = "txbCpfCliente";
+            this.txbCpfCliente.Size = new System.Drawing.Size(498, 36);
+            this.txbCpfCliente.TabIndex = 35;
+            this.txbCpfCliente.Tag = "";
+            this.txbCpfCliente.Text = "14576898870";
+            this.txbCpfCliente.TextChanged += new System.EventHandler(this.txbCpfCliente_TextChanged);
             // 
-            // txtDtNascimento
+            // cbxDatVenda
             // 
-            this.txtDtNascimento.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDtNascimento.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtDtNascimento.Location = new System.Drawing.Point(216, 335);
-            this.txtDtNascimento.Mask = "00/00/0000";
-            this.txtDtNascimento.Name = "txtDtNascimento";
-            this.txtDtNascimento.Size = new System.Drawing.Size(249, 36);
-            this.txtDtNascimento.TabIndex = 37;
-            this.txtDtNascimento.ValidatingType = typeof(System.DateTime);
+            this.cbxDatVenda.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxDatVenda.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.cbxDatVenda.Location = new System.Drawing.Point(210, 399);
+            this.cbxDatVenda.Mask = "00/00/0000";
+            this.cbxDatVenda.Name = "cbxDatVenda";
+            this.cbxDatVenda.Size = new System.Drawing.Size(249, 36);
+            this.cbxDatVenda.TabIndex = 37;
+            this.cbxDatVenda.ValidatingType = typeof(System.DateTime);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(36, 343);
+            this.label4.Location = new System.Drawing.Point(30, 407);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 28);
             this.label4.TabIndex = 38;
             this.label4.Text = "Data";
             // 
-            // txtRenda
+            // cbxValorVenda
             // 
-            this.txtRenda.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRenda.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtRenda.Location = new System.Drawing.Point(216, 416);
-            this.txtRenda.Mask = "$";
-            this.txtRenda.Name = "txtRenda";
-            this.txtRenda.Size = new System.Drawing.Size(249, 36);
-            this.txtRenda.TabIndex = 39;
+            this.cbxValorVenda.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxValorVenda.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.cbxValorVenda.Location = new System.Drawing.Point(210, 480);
+            this.cbxValorVenda.Mask = "$9999,99";
+            this.cbxValorVenda.Name = "cbxValorVenda";
+            this.cbxValorVenda.Size = new System.Drawing.Size(249, 36);
+            this.cbxValorVenda.TabIndex = 39;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(36, 424);
+            this.label5.Location = new System.Drawing.Point(30, 488);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 28);
             this.label5.TabIndex = 40;
@@ -184,40 +188,63 @@ namespace View
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(36, 183);
+            this.label6.Location = new System.Drawing.Point(30, 247);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(147, 28);
             this.label6.TabIndex = 42;
             this.label6.Text = "Funcionário";
             // 
-            // textBoxFunc
+            // txbFuncionarioMatricula
             // 
-            this.textBoxFunc.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxFunc.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBoxFunc.Location = new System.Drawing.Point(216, 175);
-            this.textBoxFunc.Name = "textBoxFunc";
-            this.textBoxFunc.Size = new System.Drawing.Size(498, 36);
-            this.textBoxFunc.TabIndex = 41;
-            this.textBoxFunc.Tag = "";
-            this.textBoxFunc.Text = "Matricula do funcionário";
+            this.txbFuncionarioMatricula.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbFuncionarioMatricula.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txbFuncionarioMatricula.Location = new System.Drawing.Point(210, 239);
+            this.txbFuncionarioMatricula.Name = "txbFuncionarioMatricula";
+            this.txbFuncionarioMatricula.Size = new System.Drawing.Size(498, 36);
+            this.txbFuncionarioMatricula.TabIndex = 41;
+            this.txbFuncionarioMatricula.Tag = "";
+            this.txbFuncionarioMatricula.Text = "123";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(30, 91);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(121, 28);
+            this.label7.TabIndex = 44;
+            this.label7.Text = "ID Venda";
+            // 
+            // txbIdVenda
+            // 
+            this.txbIdVenda.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbIdVenda.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txbIdVenda.Location = new System.Drawing.Point(210, 83);
+            this.txbIdVenda.Name = "txbIdVenda";
+            this.txbIdVenda.Size = new System.Drawing.Size(256, 36);
+            this.txbIdVenda.TabIndex = 43;
+            this.txbIdVenda.Tag = "";
+            this.txbIdVenda.Text = "1111";
             // 
             // SaleControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txbIdVenda);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBoxFunc);
+            this.Controls.Add(this.txbFuncionarioMatricula);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtRenda);
+            this.Controls.Add(this.cbxValorVenda);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtDtNascimento);
+            this.Controls.Add(this.cbxDatVenda);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textCpfCliente);
+            this.Controls.Add(this.txbCpfCliente);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnCadastrarVenda);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.txbProdNome);
             this.Name = "SaleControl";
             this.Size = new System.Drawing.Size(886, 565);
             this.panel1.ResumeLayout(false);
@@ -229,19 +256,21 @@ namespace View
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txbProdNome;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnCadastrarVenda;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textCpfCliente;
-        private System.Windows.Forms.MaskedTextBox txtDtNascimento;
+        private System.Windows.Forms.TextBox txbCpfCliente;
+        private System.Windows.Forms.MaskedTextBox cbxDatVenda;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MaskedTextBox txtRenda;
+        private System.Windows.Forms.MaskedTextBox cbxValorVenda;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxFunc;
+        private System.Windows.Forms.TextBox txbFuncionarioMatricula;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txbIdVenda;
     }
 }
