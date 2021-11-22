@@ -234,16 +234,18 @@ namespace DAO
                     "logradouro = '{1}'," +
                     "data_nascimento = '{2}'," +
                     "estado_civil = '{3}'," +
-                    "telefone = '{4}'," +
-                    "renda_mensal = '{5}'," +
-                    "estado = '{6}'," +
-                    "cidade = '{7}'," +
-                    "cep = '{8}'," +
-                    " WHERE cpf = {10}",
+                    "sexo = '{4}'," +
+                    "telefone = '{5}'," +
+                    "renda_mensal = '{6}'," +
+                    "estado = '{7}'," +
+                    "cidade = '{8}'," +
+                    "cep = '{9}'" +
+                    " WHERE cpf = {10}",                    
                     _obj.Nome,
                     _obj.Logradouro,
                     _obj.DataNascimento,
                     _obj.EstadoCivil,
+                    _obj.Sexo,
                     _obj.Telefone,
                     _obj.RendaMensal,
                     _obj.Estado,

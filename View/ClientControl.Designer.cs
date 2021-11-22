@@ -135,11 +135,10 @@ namespace View
             this.mtbDtNascimento.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtbDtNascimento.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.mtbDtNascimento.Location = new System.Drawing.Point(316, 178);
-            this.mtbDtNascimento.Mask = "0000/00/00";
+            this.mtbDtNascimento.Mask = "00/00/0000";
             this.mtbDtNascimento.Name = "mtbDtNascimento";
             this.mtbDtNascimento.Size = new System.Drawing.Size(249, 28);
             this.mtbDtNascimento.TabIndex = 7;
-            this.mtbDtNascimento.Text = "19981212";
             this.mtbDtNascimento.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbDtNascimento_MaskInputRejected);
             // 
             // label4
